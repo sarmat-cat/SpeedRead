@@ -1,0 +1,8 @@
+*.zip
+*.exe
+*.pdb
+*.pdf
+*.cache
+
+/zad/
+/laba10/
