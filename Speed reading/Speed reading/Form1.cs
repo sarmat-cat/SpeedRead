@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Speed_reading
 {
@@ -23,6 +24,116 @@ namespace Speed_reading
         Stopwatch TimeText = new Stopwatch();
         List<dynamic> Test = new List<dynamic>();
         List<int> UserAnsw = new List<int>();
+
+        //||||||||||||||||||||||||||||||||||||||||||
+        //Tren1...........начало....................
+        //||||||||||||||||||||||||||||||||||||||||||
+
+        int Tren1_mode;
+        int Tren1_n = 7; //колличество значаний которыые будут показаны
+        int Tren1_Statistick; //колличество правильных ответов
+        int Tren1_i;
+        string Tren1_value_s;
+        int Tren1_value_n;
+        int Tren1_Value_size;
+        double Tren1_Speed;
+        bool Tren1_Flag;
+        Random rendomN = new Random();
+        Stopwatch t = new Stopwatch();
+
+        public void Tren1_Load()
+        {
+            text1finish.Hide();
+            text1next.Hide();
+            text1start.Show();
+        }
+
+
+        public void Tren1_Start(int mode)
+        {
+            text1start.Hide();
+            Tren1_mode = mode;
+            text_Tren1_Entr.Text = "";
+            label_Tren1_Show.Text = "";
+            Tren1_i = 0;
+            Tren1_Value_size = 3;
+            Tren1_Speed = 1;
+            Tren1_Statistick = 0;
+            Tren1_Iter();
+        }
+
+        public void Tren1_Iter()
+        {
+            Tren1_Flag = false;
+            for (int i = 0; i < 3; i++)
+            {
+                label_Tren1_Show.Text = "            - - -";
+                tabPage2.Refresh();
+                Thread.Sleep((int)(300 * Tren1_Speed));
+
+                label_Tren1_Show.Text = "";
+                tabPage2.Refresh();
+                Thread.Sleep((int)(300 * Tren1_Speed));
+            }
+            if (Tren1_mode == 0)
+            {
+                if (Tren1_i == 5)
+                {
+                    Tren1_Value_size++;
+                }
+                int min = (int)(Math.Pow(10, Tren1_Value_size - 1));
+                Tren1_value_n = rendomN.Next(min, min * 10 - 1);
+                label_Tren1_Show.Text = String.Format("          {0}",Tren1_value_n);
+                tabPage2.Refresh();
+                t.Start();
+                Thread.Sleep((int)(300 * Tren1_Speed));
+                t.Stop();
+                t.Reset();
+                label_Tren1_Show.Text = "";
+                tabPage2.Refresh();
+            }
+            Tren1_Flag = true;
+        }
+
+        public void Tren1_Chek()
+        {
+            if (Tren1_Flag)
+            {
+                if (Tren1_value_n == int.Parse(text_Tren1_Entr.Text))
+                {
+                    text_Tren1_Entr.BackColor = Color.PaleGreen;
+                    Tren1_Statistick++;
+
+                }
+                else
+                {
+                    text_Tren1_Entr.BackColor = Color.Salmon;
+
+                }
+                tabPage2.Refresh();
+                Thread.Sleep(1000);
+                text_Tren1_Entr.BackColor = Color.White;
+                text_Tren1_Entr.Text = "";
+                label_Tren1_Show.Text = "";
+                Tren1_i++;
+                tabPage2.Refresh();
+                if (Tren1_i < Tren1_n)
+                {
+                    Tren1_Iter();
+                }
+                else
+                {
+                    label_Tren1_Show.Text = String.Format("Верно {0} из {1}", Tren1_Statistick, Tren1_n);
+                    text1next.Show();
+                }
+
+            }
+        }
+        //|||||||||||||||||||||||||||||||||||||||||||
+        //Tren1............конец.....................
+        //|||||||||||||||||||||||||||||||||||||||||||
+
+
         //Загрузка тестовых вопросов и ваиантов ответов из текстового файла
         public void LoadTestData(string path)
         {
@@ -119,7 +230,9 @@ namespace Speed_reading
                     read_1_cnt = read_1_cnt >= 2 ? 1 : read_1_cnt + 1;     
             
                 break;
-
+                case "tabPage2":
+                    Tren1_Start(0);
+                    break;
                 case "tabPage3":
                     webBrowser3.Visible = true;
                     int num = rnd.Next(1, 4);
@@ -237,6 +350,19 @@ namespace Speed_reading
                 }
             }
                 
+        }
+
+        private void text_Tren1_Entr_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                Tren1_Chek();
+            }
+        }
+
+        private void label_Tren1_Show_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
