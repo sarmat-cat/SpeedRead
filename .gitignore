@@ -3,9 +3,15 @@
 *.pdb
 *.pdf
 *.cache
-
+.gitignore
+/
 /zad/
 /laba10/
-Speed reading/Speed reading/obj/Debug/Speed reading.csproj.FileListAbsolute.txt
-Speed reading/Speed reading/bin/DEbug/Speed reading.pdb
-Speed reading/Speed reading/bin/DEbug/Speed reading.exe
+/Speed reading/Speed reading/obj/Debug/Speed reading.csproj.FileListAbsolute.txt
+/Speed reading/Speed reading/bin/DEbug/Speed reading.pdb
+/Speed reading/Speed reading/bin/DEbug/Speed reading.exe
+/Speed reading/.vs/Speed reading/v16/.suo
+описание speedread.docx
+Speed reading/Speed reading/bin/Debug/
+Speed reading/Speed reading/obj/Debug/
+

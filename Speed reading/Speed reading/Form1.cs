@@ -20,6 +20,7 @@ namespace Speed_reading
         int read_1_cnt = 1;
         bool is_answered = false;
         string text = "текст тестовый, обычный такой";
+        int correctAnswerCnt;
         Random rnd = new Random();
         Stopwatch TimeText = new Stopwatch();
         List<dynamic> Test = new List<dynamic>();
@@ -257,18 +258,25 @@ namespace Speed_reading
             text1finish.Hide();
             text1next.Show();
             int countWord = 1;
+            string statAnswer="";
+
             switch (tabControl1.SelectedTab.Name)
             {
                 case "tabPage1":
                     text = webBrowser1.Document.Body.InnerText;
                     break;
-                case "tabPage3":                   
+                case "tabPage3":
                     if (webBrowser3.Visible)
                     {
                         text = webBrowser3.Document.Body.InnerText;
                         webBrowser3.Visible = false;
                         grBoxTestQuest.Visible = true;
                         LoadTest(0);
+                    }
+                    else
+                    {
+                        statAnswer = "Правильных от ветов "+ correctAnswerCnt.ToString() + " из " + Test.Count().ToString();
+                        correctAnswerCnt = 0;
                     }
                     break;
                 default:
@@ -283,7 +291,7 @@ namespace Speed_reading
                 }
             }
             double minuts = secods / 60.0;
-            infoText1.Text = String.Format("Отлично! Ваша скорость чтения составляет {0} слов в минуту", countWord / minuts);
+            infoText1.Text = String.Format("Отлично! Ваша скорость чтения составляет {0} слов в минуту \r{1}" , (int)(countWord / minuts), statAnswer);
         }
         //Следующее задание
         private void text1next_Click(object sender, EventArgs e)
@@ -330,7 +338,13 @@ namespace Speed_reading
                     RadioButton radio = control as RadioButton;
                     if (radio.Checked)
                     {
-                        UserAnsw.Add(Convert.ToInt32(radio.Tag));
+                        int userAnswer = Convert.ToInt32(radio.Tag);
+                        if (userAnswer == Test[UserAnsw.Count].correct)
+                        {
+                            correctAnswerCnt++;
+                        }
+                        UserAnsw.Add(userAnswer);
+                        
                         btnAnsw.Enabled = false;
                         //RunTestNext();
                         if (UserAnsw.Count < Test.Count)
@@ -342,6 +356,8 @@ namespace Speed_reading
                         {
                             radioButton_Clear();
                             Text1Stop_Click(sender, e);
+                            Test.Clear();
+                            UserAnsw.Clear();
                             grBoxTestQuest.Visible = false;
                             //webBrowser3.Visible = true;
                         }
