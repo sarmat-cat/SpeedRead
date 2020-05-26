@@ -31,7 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.webBrowser3 = new System.Windows.Forms.WebBrowser();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.webBrowser2 = new System.Windows.Forms.WebBrowser();
             this.text1start = new System.Windows.Forms.Button();
             this.text1finish = new System.Windows.Forms.Button();
             this.tabControl2 = new System.Windows.Forms.TabControl();
@@ -41,16 +46,22 @@
             this.text1P1 = new System.Windows.Forms.TabPage();
             this.text1next = new System.Windows.Forms.Button();
             this.infoText1 = new System.Windows.Forms.RichTextBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.webBrowser2 = new System.Windows.Forms.WebBrowser();
+            this.grBoxTestQuest = new System.Windows.Forms.GroupBox();
+            this.grQuestion = new System.Windows.Forms.GroupBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.btnAnsw = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.menuP1.SuspendLayout();
             this.text1P1.SuspendLayout();
-            this.tabPage4.SuspendLayout();
+            this.grBoxTestQuest.SuspendLayout();
+            this.grQuestion.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -85,6 +96,15 @@
             this.tabPage1.Text = "Разминка";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Location = new System.Drawing.Point(2, 2);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(423, 503);
+            this.webBrowser1.TabIndex = 0;
+            // 
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
@@ -95,6 +115,46 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Тренировка";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.grBoxTestQuest);
+            this.tabPage3.Controls.Add(this.webBrowser3);
+            this.tabPage3.Location = new System.Drawing.Point(4, 24);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(427, 507);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Тест";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // webBrowser3
+            // 
+            this.webBrowser3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser3.Location = new System.Drawing.Point(0, 0);
+            this.webBrowser3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.webBrowser3.MinimumSize = new System.Drawing.Size(15, 16);
+            this.webBrowser3.Name = "webBrowser3";
+            this.webBrowser3.Size = new System.Drawing.Size(427, 507);
+            this.webBrowser3.TabIndex = 0;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.webBrowser2);
+            this.tabPage4.Location = new System.Drawing.Point(4, 24);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(427, 507);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Доп. материалы";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // webBrowser2
+            // 
+            this.webBrowser2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser2.Location = new System.Drawing.Point(0, 0);
+            this.webBrowser2.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser2.Name = "webBrowser2";
+            this.webBrowser2.Size = new System.Drawing.Size(427, 507);
+            this.webBrowser2.TabIndex = 0;
             // 
             // text1start
             // 
@@ -201,42 +261,93 @@
             this.infoText1.TabIndex = 3;
             this.infoText1.Text = "";
             // 
-            // tabPage3
+            // grBoxTestQuest
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 24);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(427, 507);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Тест";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.grBoxTestQuest.Controls.Add(this.grQuestion);
+            this.grBoxTestQuest.Location = new System.Drawing.Point(16, 3);
+            this.grBoxTestQuest.Name = "grBoxTestQuest";
+            this.grBoxTestQuest.Size = new System.Drawing.Size(408, 487);
+            this.grBoxTestQuest.TabIndex = 1;
+            this.grBoxTestQuest.TabStop = false;
+            this.grBoxTestQuest.Text = "Выберете ответы";
+            this.grBoxTestQuest.Visible = false;
             // 
-            // tabPage4
+            // grQuestion
             // 
-            this.tabPage4.Controls.Add(this.webBrowser2);
-            this.tabPage4.Location = new System.Drawing.Point(4, 24);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(427, 507);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Доп. материалы";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.grQuestion.Controls.Add(this.btnAnsw);
+            this.grQuestion.Controls.Add(this.radioButton4);
+            this.grQuestion.Controls.Add(this.radioButton3);
+            this.grQuestion.Controls.Add(this.radioButton2);
+            this.grQuestion.Controls.Add(this.radioButton1);
+            this.grQuestion.Location = new System.Drawing.Point(39, 30);
+            this.grQuestion.Name = "grQuestion";
+            this.grQuestion.Size = new System.Drawing.Size(314, 149);
+            this.grQuestion.TabIndex = 5;
+            this.grQuestion.TabStop = false;
+            this.grQuestion.Text = "groupBox2";
             // 
-            // webBrowser1
+            // radioButton1
             // 
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(2, 2);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(423, 503);
-            this.webBrowser1.TabIndex = 0;
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(6, 29);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(85, 17);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Tag = "1";
+            this.radioButton1.Text = "radioButton1";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
-            // webBrowser2
+            // radioButton2
             // 
-            this.webBrowser2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser2.Location = new System.Drawing.Point(0, 0);
-            this.webBrowser2.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser2.Name = "webBrowser2";
-            this.webBrowser2.Size = new System.Drawing.Size(427, 507);
-            this.webBrowser2.TabIndex = 0;
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(6, 52);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(85, 17);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Tag = "2";
+            this.radioButton2.Text = "radioButton2";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(6, 75);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(85, 17);
+            this.radioButton3.TabIndex = 2;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Tag = "3";
+            this.radioButton3.Text = "radioButton3";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(6, 98);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(85, 17);
+            this.radioButton4.TabIndex = 3;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Tag = "4";
+            this.radioButton4.Text = "radioButton4";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+            // 
+            // btnAnsw
+            // 
+            this.btnAnsw.Enabled = false;
+            this.btnAnsw.Location = new System.Drawing.Point(127, 120);
+            this.btnAnsw.Name = "btnAnsw";
+            this.btnAnsw.Size = new System.Drawing.Size(75, 23);
+            this.btnAnsw.TabIndex = 4;
+            this.btnAnsw.Text = "Ответить";
+            this.btnAnsw.UseVisualStyleBackColor = true;
+            this.btnAnsw.Click += new System.EventHandler(this.btnAnsw_Click);
             // 
             // Form1
             // 
@@ -252,10 +363,14 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.menuP1.ResumeLayout(false);
             this.text1P1.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
+            this.grBoxTestQuest.ResumeLayout(false);
+            this.grQuestion.ResumeLayout(false);
+            this.grQuestion.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -278,6 +393,14 @@
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.WebBrowser webBrowser2;
+        private System.Windows.Forms.WebBrowser webBrowser3;
+        private System.Windows.Forms.GroupBox grBoxTestQuest;
+        private System.Windows.Forms.GroupBox grQuestion;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Button btnAnsw;
     }
 }
 
