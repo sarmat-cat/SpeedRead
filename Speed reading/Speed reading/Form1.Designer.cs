@@ -30,9 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label_Tren1_Show = new System.Windows.Forms.Label();
+            this.text_Tren1_Entr = new System.Windows.Forms.RichTextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.grBoxTestQuest = new System.Windows.Forms.GroupBox();
             this.grQuestion = new System.Windows.Forms.GroupBox();
@@ -53,9 +56,12 @@
             this.text1P1 = new System.Windows.Forms.TabPage();
             this.text1next = new System.Windows.Forms.Button();
             this.infoText1 = new System.Windows.Forms.RichTextBox();
-            this.text_Tren1_Entr = new System.Windows.Forms.RichTextBox();
-            this.label_Tren1_Show = new System.Windows.Forms.Label();
+            this.but_Tren = new System.Windows.Forms.Button();
+            this.but_Razm = new System.Windows.Forms.Button();
+            this.but_Test = new System.Windows.Forms.Button();
+            this.but_Dop = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -73,74 +79,110 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.ItemSize = new System.Drawing.Size(70, 20);
-            this.tabControl1.Location = new System.Drawing.Point(208, 12);
+            this.tabControl1.ItemSize = new System.Drawing.Size(0, 1);
+            this.tabControl1.Location = new System.Drawing.Point(208, 11);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(580, 658);
+            this.tabControl1.Size = new System.Drawing.Size(580, 659);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 0;
             this.tabControl1.TabStop = false;
             // 
+            // tabPage5
+            // 
+            this.tabPage5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.tabPage5.Controls.Add(this.but_Test);
+            this.tabPage5.Controls.Add(this.but_Dop);
+            this.tabPage5.Controls.Add(this.but_Razm);
+            this.tabPage5.Controls.Add(this.but_Tren);
+            this.tabPage5.Location = new System.Drawing.Point(4, 5);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(572, 650);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Menu";
+            // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.tabPage1.Controls.Add(this.webBrowser1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            this.tabPage1.Location = new System.Drawing.Point(4, 5);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(572, 630);
+            this.tabPage1.Size = new System.Drawing.Size(572, 650);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Разминка";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // webBrowser1
             // 
             this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.webBrowser1.Location = new System.Drawing.Point(3, 2);
-            this.webBrowser1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.webBrowser1.Margin = new System.Windows.Forms.Padding(4);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(27, 25);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(566, 626);
+            this.webBrowser1.Size = new System.Drawing.Size(566, 646);
             this.webBrowser1.TabIndex = 0;
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.tabPage2.Controls.Add(this.label_Tren1_Show);
             this.tabPage2.Controls.Add(this.text_Tren1_Entr);
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            this.tabPage2.Location = new System.Drawing.Point(4, 5);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(572, 630);
+            this.tabPage2.Size = new System.Drawing.Size(572, 650);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Тренировка";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label_Tren1_Show
+            // 
+            this.label_Tren1_Show.AutoSize = true;
+            this.label_Tren1_Show.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_Tren1_Show.Location = new System.Drawing.Point(73, 50);
+            this.label_Tren1_Show.Name = "label_Tren1_Show";
+            this.label_Tren1_Show.Size = new System.Drawing.Size(254, 55);
+            this.label_Tren1_Show.TabIndex = 1;
+            this.label_Tren1_Show.Text = "            - - -";
+            this.label_Tren1_Show.Click += new System.EventHandler(this.label_Tren1_Show_Click);
+            // 
+            // text_Tren1_Entr
+            // 
+            this.text_Tren1_Entr.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.text_Tren1_Entr.Location = new System.Drawing.Point(83, 161);
+            this.text_Tren1_Entr.Name = "text_Tren1_Entr";
+            this.text_Tren1_Entr.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.text_Tren1_Entr.Size = new System.Drawing.Size(377, 66);
+            this.text_Tren1_Entr.TabIndex = 0;
+            this.text_Tren1_Entr.Text = "";
+            this.text_Tren1_Entr.KeyDown += new System.Windows.Forms.KeyEventHandler(this.text_Tren1_Entr_KeyDown);
             // 
             // tabPage3
             // 
+            this.tabPage3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.tabPage3.Controls.Add(this.grBoxTestQuest);
             this.tabPage3.Controls.Add(this.webBrowser3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 24);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Location = new System.Drawing.Point(4, 5);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(572, 630);
+            this.tabPage3.Size = new System.Drawing.Size(572, 650);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Тест";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // grBoxTestQuest
             // 
             this.grBoxTestQuest.Controls.Add(this.grQuestion);
             this.grBoxTestQuest.Location = new System.Drawing.Point(21, 4);
-            this.grBoxTestQuest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grBoxTestQuest.Margin = new System.Windows.Forms.Padding(4);
             this.grBoxTestQuest.Name = "grBoxTestQuest";
-            this.grBoxTestQuest.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grBoxTestQuest.Padding = new System.Windows.Forms.Padding(4);
             this.grBoxTestQuest.Size = new System.Drawing.Size(544, 599);
             this.grBoxTestQuest.TabIndex = 1;
             this.grBoxTestQuest.TabStop = false;
@@ -155,9 +197,9 @@
             this.grQuestion.Controls.Add(this.radioButton2);
             this.grQuestion.Controls.Add(this.radioButton1);
             this.grQuestion.Location = new System.Drawing.Point(52, 37);
-            this.grQuestion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grQuestion.Margin = new System.Windows.Forms.Padding(4);
             this.grQuestion.Name = "grQuestion";
-            this.grQuestion.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grQuestion.Padding = new System.Windows.Forms.Padding(4);
             this.grQuestion.Size = new System.Drawing.Size(419, 183);
             this.grQuestion.TabIndex = 5;
             this.grQuestion.TabStop = false;
@@ -167,7 +209,7 @@
             // 
             this.btnAnsw.Enabled = false;
             this.btnAnsw.Location = new System.Drawing.Point(169, 148);
-            this.btnAnsw.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAnsw.Margin = new System.Windows.Forms.Padding(4);
             this.btnAnsw.Name = "btnAnsw";
             this.btnAnsw.Size = new System.Drawing.Size(100, 28);
             this.btnAnsw.TabIndex = 4;
@@ -179,7 +221,7 @@
             // 
             this.radioButton4.AutoSize = true;
             this.radioButton4.Location = new System.Drawing.Point(8, 121);
-            this.radioButton4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton4.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(110, 21);
             this.radioButton4.TabIndex = 3;
@@ -193,7 +235,7 @@
             // 
             this.radioButton3.AutoSize = true;
             this.radioButton3.Location = new System.Drawing.Point(8, 92);
-            this.radioButton3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton3.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(110, 21);
             this.radioButton3.TabIndex = 2;
@@ -207,7 +249,7 @@
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(8, 64);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(110, 21);
             this.radioButton2.TabIndex = 1;
@@ -221,7 +263,7 @@
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Location = new System.Drawing.Point(8, 36);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(110, 21);
             this.radioButton1.TabIndex = 0;
@@ -238,28 +280,28 @@
             this.webBrowser3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.webBrowser3.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser3.Name = "webBrowser3";
-            this.webBrowser3.Size = new System.Drawing.Size(572, 630);
+            this.webBrowser3.Size = new System.Drawing.Size(572, 650);
             this.webBrowser3.TabIndex = 0;
             // 
             // tabPage4
             // 
+            this.tabPage4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.tabPage4.Controls.Add(this.webBrowser2);
-            this.tabPage4.Location = new System.Drawing.Point(4, 24);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage4.Location = new System.Drawing.Point(4, 5);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(572, 630);
+            this.tabPage4.Size = new System.Drawing.Size(572, 650);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Доп. материалы";
-            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // webBrowser2
             // 
             this.webBrowser2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.webBrowser2.Location = new System.Drawing.Point(0, 0);
-            this.webBrowser2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.webBrowser2.Margin = new System.Windows.Forms.Padding(4);
             this.webBrowser2.MinimumSize = new System.Drawing.Size(27, 25);
             this.webBrowser2.Name = "webBrowser2";
-            this.webBrowser2.Size = new System.Drawing.Size(572, 630);
+            this.webBrowser2.Size = new System.Drawing.Size(572, 650);
             this.webBrowser2.TabIndex = 0;
             // 
             // text1start
@@ -289,27 +331,28 @@
             this.tabControl2.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabControl2.Controls.Add(this.menuP1);
             this.tabControl2.Controls.Add(this.text1P1);
-            this.tabControl2.Location = new System.Drawing.Point(5, 7);
+            this.tabControl2.ItemSize = new System.Drawing.Size(0, 1);
+            this.tabControl2.Location = new System.Drawing.Point(5, 11);
             this.tabControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(200, 663);
+            this.tabControl2.Size = new System.Drawing.Size(200, 659);
             this.tabControl2.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl2.TabIndex = 1;
             this.tabControl2.TabStop = false;
             // 
             // menuP1
             // 
+            this.menuP1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.menuP1.Controls.Add(this.StartTest);
             this.menuP1.Controls.Add(this.infoMenu);
-            this.menuP1.Location = new System.Drawing.Point(4, 28);
+            this.menuP1.Location = new System.Drawing.Point(4, 5);
             this.menuP1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.menuP1.Name = "menuP1";
             this.menuP1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.menuP1.Size = new System.Drawing.Size(192, 631);
+            this.menuP1.Size = new System.Drawing.Size(192, 650);
             this.menuP1.TabIndex = 0;
             this.menuP1.Text = "menuP1";
-            this.menuP1.UseVisualStyleBackColor = true;
             // 
             // StartTest
             // 
@@ -334,22 +377,22 @@
             // 
             // text1P1
             // 
+            this.text1P1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.text1P1.Controls.Add(this.text1next);
             this.text1P1.Controls.Add(this.infoText1);
             this.text1P1.Controls.Add(this.text1finish);
             this.text1P1.Controls.Add(this.text1start);
-            this.text1P1.Location = new System.Drawing.Point(4, 28);
+            this.text1P1.Location = new System.Drawing.Point(4, 5);
             this.text1P1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.text1P1.Name = "text1P1";
             this.text1P1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.text1P1.Size = new System.Drawing.Size(192, 631);
+            this.text1P1.Size = new System.Drawing.Size(192, 650);
             this.text1P1.TabIndex = 1;
             this.text1P1.Text = "text1P1";
-            this.text1P1.UseVisualStyleBackColor = true;
             // 
             // text1next
             // 
-            this.text1next.Location = new System.Drawing.Point(31, 306);
+            this.text1next.Location = new System.Drawing.Point(31, 242);
             this.text1next.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.text1next.Name = "text1next";
             this.text1next.Size = new System.Drawing.Size(133, 58);
@@ -368,32 +411,51 @@
             this.infoText1.TabIndex = 3;
             this.infoText1.Text = "";
             // 
-            // text_Tren1_Entr
+            // but_Tren
             // 
-            this.text_Tren1_Entr.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.text_Tren1_Entr.Location = new System.Drawing.Point(83, 161);
-            this.text_Tren1_Entr.Name = "text_Tren1_Entr";
-            this.text_Tren1_Entr.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.text_Tren1_Entr.Size = new System.Drawing.Size(377, 66);
-            this.text_Tren1_Entr.TabIndex = 0;
-            this.text_Tren1_Entr.Text = "";
-            this.text_Tren1_Entr.KeyDown += new System.Windows.Forms.KeyEventHandler(this.text_Tren1_Entr_KeyDown);
+            this.but_Tren.Location = new System.Drawing.Point(308, 366);
+            this.but_Tren.Name = "but_Tren";
+            this.but_Tren.Size = new System.Drawing.Size(164, 96);
+            this.but_Tren.TabIndex = 0;
+            this.but_Tren.Text = "Тренировка";
+            this.but_Tren.UseVisualStyleBackColor = true;
+            this.but_Tren.Click += new System.EventHandler(this.but_Tren_Click);
             // 
-            // label_Tren1_Show
+            // but_Razm
             // 
-            this.label_Tren1_Show.AutoSize = true;
-            this.label_Tren1_Show.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_Tren1_Show.Location = new System.Drawing.Point(73, 50);
-            this.label_Tren1_Show.Name = "label_Tren1_Show";
-            this.label_Tren1_Show.Size = new System.Drawing.Size(254, 55);
-            this.label_Tren1_Show.TabIndex = 1;
-            this.label_Tren1_Show.Text = "            - - -";
-            this.label_Tren1_Show.Click += new System.EventHandler(this.label_Tren1_Show_Click);
+            this.but_Razm.Location = new System.Drawing.Point(106, 366);
+            this.but_Razm.Name = "but_Razm";
+            this.but_Razm.Size = new System.Drawing.Size(164, 96);
+            this.but_Razm.TabIndex = 1;
+            this.but_Razm.Text = "Разминка";
+            this.but_Razm.UseVisualStyleBackColor = true;
+            this.but_Razm.Click += new System.EventHandler(this.but_Razm_Click);
+            // 
+            // but_Test
+            // 
+            this.but_Test.Location = new System.Drawing.Point(106, 498);
+            this.but_Test.Name = "but_Test";
+            this.but_Test.Size = new System.Drawing.Size(164, 96);
+            this.but_Test.TabIndex = 3;
+            this.but_Test.Text = "Тест";
+            this.but_Test.UseVisualStyleBackColor = true;
+            this.but_Test.Click += new System.EventHandler(this.but_Test_Click);
+            // 
+            // but_Dop
+            // 
+            this.but_Dop.Location = new System.Drawing.Point(308, 498);
+            this.but_Dop.Name = "but_Dop";
+            this.but_Dop.Size = new System.Drawing.Size(164, 96);
+            this.but_Dop.TabIndex = 2;
+            this.but_Dop.Text = "дополнительные материалы";
+            this.but_Dop.UseVisualStyleBackColor = true;
+            this.but_Dop.Click += new System.EventHandler(this.but_Dop_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 683);
             this.Controls.Add(this.tabControl2);
             this.Controls.Add(this.tabControl1);
@@ -403,6 +465,7 @@
             this.Text = "Speed reading";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -446,6 +509,11 @@
         private System.Windows.Forms.Button btnAnsw;
         private System.Windows.Forms.Label label_Tren1_Show;
         private System.Windows.Forms.RichTextBox text_Tren1_Entr;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Button but_Test;
+        private System.Windows.Forms.Button but_Dop;
+        private System.Windows.Forms.Button but_Razm;
+        private System.Windows.Forms.Button but_Tren;
     }
 }
 
