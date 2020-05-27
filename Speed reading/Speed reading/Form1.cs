@@ -286,7 +286,7 @@ namespace Speed_reading
                 
                 case 0://Цвета
                     text1next.Text = "Следующее задание";
-                    infoText1.Text = "";
+                    infoText1.Text = "«Называем цвет». Называйте вслух при чтении следующего цветного текста цвета слов. Именно цвета, а не то, что написано.";
                     text1finish.Hide();
                     text1next.Show();
                     text1start.Hide();
